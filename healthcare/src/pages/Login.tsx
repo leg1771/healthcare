@@ -104,7 +104,7 @@ export default function Login(){
               </div>
               
               <div className="text-sm mt-4">
-                  <a href="#" className="font-semibold text-blue-600 hover:text-blue-500">
+                  <a href="/findid" className="font-semibold text-blue-600 hover:text-blue-500">
                     아이디 찾기
                   </a>
                   &nbsp;
@@ -132,7 +132,7 @@ export default function Login(){
           <p className="mt-10 text-center text-sm text-gray-600">
             포인티 계정이 없으세요? |
             
-            <a href="#" className="font-semibold leading-6 text-blue-600 hover:text-blue-500 ml-1">
+            <a href="/sign1" className="font-semibold leading-6 text-blue-600 hover:text-blue-500 ml-1">
               회원가입
             </a>
           </p>

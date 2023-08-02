@@ -55,11 +55,16 @@ export default function FindId(){
     return (
 
         <>
+        <h1>
+         <a href = '/login'>
          <img
-            className="float-left mx-8 my-8 h-10 w-auto transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-150"
+            className="fixed float-left mx-8 my-8 h-10 w-auto transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-150"
             src="/src/assets/backicon.svg"
             alt="Your Company"
+            
           />
+          </a>
+          </h1>
         <div className="flex min-h-full flex-1 flex-col justify-center  px-6 py-12 lg:px-8">
        
      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
