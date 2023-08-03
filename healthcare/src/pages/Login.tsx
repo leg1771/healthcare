@@ -6,20 +6,12 @@ import { useCookies } from "react-cookie";
 import '../assets/logo.svg'
 
 
+
+
 export default function Login(){
 
-   
     
-    const [tokenCookie, setTokenCookie] = useCookies(["accessToken"]);
-
-    
-   
-        // 로그인 후 가져온 데이터를 전역으로 관리하기 위한 swr 코드 
-    const { data, error, mutate } = useSWR('http://223.130.161.221/api/v1/admins/login', fetcher);
-    const [loginError, setLoginError] = useState(false);
-
-
-    const loginSubmitHandler = (e) => {
+        const loginSubmitHandler = (e) => {
         
        
 
@@ -28,14 +20,15 @@ export default function Login(){
                 'Authorization' : 'dGVhbTIxOnRlYW0yMSEh'
             }
         })
-        .then(res => { // headers: {…} 로 들어감.
-          console.log('send Ok', res.data)  
-          const jwtToken = res.data.accessToken;
-          console.log(jwtToken)
-          setTokenCookie("accessToken", jwtToken, {
-            maxAge: 60 * 30000,
-          });
-          mutate();
+        .then(res => {
+            console.log(res.data)
+            localStorage.clear()
+            localStorage.setItem('accesstoken', res.data.accessToken)
+            localStorage.setItem('refreshtoken', res.data.refreshToken)
+            window.location.replace('/main')
+        })
+        .catch((err) => {
+            console.log(err)
         })
 
         
@@ -54,7 +47,7 @@ export default function Login(){
           <img
             className="mx-auto h-10 w-auto transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-150"
             src="/src/assets/logo.svg"
-            alt="Your Company"
+           
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 ">
            
@@ -62,7 +55,7 @@ export default function Login(){
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+        
             <div className="bg-white">
                 <nav className="flex flex-col sm:flex-row">
                     <button className="text-gray-600 py-4 px-6 block hover:text-blue-600 focus:outline-none text-blue-600 hover:border-b-2 font-medium hover:border-blue-600">
@@ -73,7 +66,7 @@ export default function Login(){
                 </nav>
             </div>
             <div>
-              <label className="block text-l font-medium leading-6 text-gray-900">
+              <label className="block text-l font-medium leading-6 text-gray-900 mt-20">
                 아이디
               </label>
               <div className="mt-2">
@@ -88,7 +81,7 @@ export default function Login(){
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-l font-medium leading-6 text-gray-900">
+                <label htmlFor="password" className="block text-l font-medium leading-6 text-gray-900 mt-5">
                   비밀번호
                 </label>
               </div>
@@ -127,7 +120,7 @@ export default function Login(){
                 로그인
               </button>
             </div>
-          </form>
+         
 
           <p className="mt-10 text-center text-sm text-gray-600">
             포인티 계정이 없으세요? |

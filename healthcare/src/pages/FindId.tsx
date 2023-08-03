@@ -60,7 +60,7 @@ export default function FindId(){
          <img
             className="fixed float-left mx-8 my-8 h-10 w-auto transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-150"
             src="/src/assets/backicon.svg"
-            alt="Your Company"
+            
             
           />
           </a>

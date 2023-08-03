@@ -1,17 +1,17 @@
 import axios from 'axios';
-import { useCookies } from "react-cookie";
 
 
 const fetcher = (url: string) =>
   axios
-    .post(url, null, {
+    .get(url, {
+        withCredentials: true,
+
         headers :  {
-                'Authorization' : 'dGVhbTIxOnRlYW0yMSEh'
+                'Authorization' : 'Bearer'+' '+ localStorage.getItem('accesstoken')
 
         }
+        
     })
-    .then((response) => {response.data;
-        console.log(response.data);
-        });
+    .then((res) => {res.data});
 
 export default fetcher;
