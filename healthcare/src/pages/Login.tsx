@@ -1,8 +1,8 @@
 import useSWR from 'swr'
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios'
 import fetcher from '../utils/fetcher';
-import { useCookies } from "react-cookie";
+
 import '../assets/logo.svg'
 
 
@@ -26,6 +26,7 @@ export default function Login(){
             localStorage.setItem('accesstoken', res.data.accessToken)
             localStorage.setItem('refreshtoken', res.data.refreshToken)
             window.location.replace('/main')
+            
         })
         .catch((err) => {
             console.log(err)

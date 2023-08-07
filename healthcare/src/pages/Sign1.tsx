@@ -1,8 +1,8 @@
 import useSWR from 'swr'
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios'
 import fetcher from '../utils/fetcher';
-import { useCookies } from "react-cookie";
+
 
 export default function Sign(){
     
@@ -49,47 +49,37 @@ export default function Sign(){
             멤버 약관 동의
        </h2>
      </div>
+     
+     <div>   
+     <input id="vue-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+     <label for="vue-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">전체동의</label>        
+     </div>
+<ul className="w-50 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white ">
+    <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+        <div className="flex items-center pl-3">
+            <input id="vue-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+            <label for="vue-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">[필수] 포인티 이용약관</label>
+            <label for="vue-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">약관보기</label>
+        </div>
+    </li>
+    <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+        <div className="flex items-center pl-3">
+            <input id="react-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+            <label for="react-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">[필수] 포인티 개인정보 처리방침</label>
+            <label for="vue-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">약관보기</label>
+        </div>
+    </li>
+    <li className="w-full border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+        <div className="flex items-center pl-3">
+            <input id="angular-checkbox" type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"></input>
+            <label for="angular-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">[필수] 포인티 마케팅 이용약관</label>
+            <label for="vue-checkbox" class="w-full py-3 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">약관보기</label>
+        </div>
+    </li>
+   
+</ul>
 
-     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-       <form className="space-y-6" action="#" method="POST">
-         <div>
-           <label className="block text-l font-semibold leading-6 text-gray-900">
-             이름
-           </label>
-           <div className="mt-2">
-             <input
-               id="email"
-               name="email"
-               required
-               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 pl-6 "
-             />
-           </div>
-         </div>
 
-        
-         <div>
-           <div className="flex items-center justify-between">
-             <label className="block text-l font-medium leading-6 text-gray-900">
-               연락처
-             </label>
-           </div>
-           <div className="mt-2 flex">
-             <input
-               id="password"
-               name="password"
-               required
-               className=" flex-auto block w-64  rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 pl-6"
-             >
-                
-                </input>
-             <button  className= "ml-2 flex-auto w-32  justify-center  rounded-md   px-3 py-1.5 text-sm  font-semibold leading-6 text-black shadow-sm ring-1 ring-inset ring-gray-300 hover:ring-2 hover:ring-inset hover:ring-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                      
-                >
-               
-             </button>
-           </div>
-           
-         </div>
 
          <div>
            <button
@@ -100,9 +90,15 @@ export default function Sign(){
              확인
            </button>
          </div>
-       </form>
+
+    
      </div>
-   </div>
+   
+
+
+   
  </>
+
+ 
     )
 }

@@ -1,8 +1,6 @@
-import useSWR from 'swr'
-import React, { useState, useCallback } from 'react';
-import axios from 'axios'
-import fetcher from '../utils/fetcher';
-import { useCookies } from "react-cookie";
+import React, { useState } from 'react';
+
+
 
 export default function FindId(){
     
@@ -41,6 +39,9 @@ export default function FindId(){
            </div>
             )
         }
+
+
+
 
         else return (<></>)
 
